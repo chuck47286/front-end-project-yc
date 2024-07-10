@@ -1,45 +1,47 @@
-import React from "react";
-import logo from "./logo.svg";
-import "./App.css";
+import React from 'react';
 
 function App() {
-  // const a = 10;
+  const questionList = [
+    { id: 'q1', title: '问卷1', isPublished: false },
+    { id: 'q2', title: '问卷2', isPublished: true },
+    { id: 'q3', title: '问卷3', isPublished: false },
+    { id: 'q4', title: '问卷4', isPublished: true },
+  ];
 
-  // const list = [
-  //   {username:"shuangyue",name:"双越"},
-  //   // {username:"zhangsan",name:"张三"},
-  //   {username:"lisi",name:"李四"},
-  // ];
+  function edit(id: string) {
+    console.log('edit ', id);
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        {/* 注释在 TSX 中的写法 */}
-        {/* 获取循环结构 */}
-        {/* <ul>
-          {list.map(user => {
-            const {username, name} = user
-            return <li key={username}>{name}</li>
-          })}
-        </ul> */}
-
-        {/* <div>
-          <label htmlFor="input1">姓名</label>
-          <input id="input1"/>
-        </div> */}
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-          // style={{color:"red", backgroundColor: "white"}}
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>问卷列表页</h1>
+      <div>
+        {questionList.map((question) => {
+          const { id, title, isPublished } = question;
+          return (
+            <div key={id}>
+              <strong>{title}</strong>
+              {/* 不换行空格 */}
+              &nbsp;
+              {/* 判断 */}
+              {isPublished ? (
+                <span style={{ color: 'green' }}>已发布</span>
+              ) : (
+                <span>未发布</span>
+              )}
+              &nbsp;
+              {/* 编辑问卷 */}
+              <button
+                onClick={() => {
+                  edit(id);
+                }}
+              >
+                编辑问卷
+              </button>
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 }
