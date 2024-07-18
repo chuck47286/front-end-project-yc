@@ -21,6 +21,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
+    "clean": "rimraf build",
     "lint": "eslint \"src/**/*.{js,ts,jsx,tsx}\"",
     "format": " prettier --write \"src/**/*.+(js|ts|jsx|tsx)\" "
   },

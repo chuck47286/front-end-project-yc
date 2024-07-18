@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import './questionCard.css';
+import './QuestionCard.css';
 
 type propsType = {
   id: string;

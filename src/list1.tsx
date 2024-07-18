@@ -1,9 +1,9 @@
 import React, { FC } from 'react';
-import QuestionCard from './component/questionCard';
+import QuestionCard from './components/QuestionCard';
 // import './list1.css';
 
 // TS 类型
-const list1: FC = () => {
+const List1: FC = () => {
   const questionList = [
     { id: 'q1', title: '问卷1', isPublished: false },
     { id: 'q2', title: '问卷2', isPublished: true },
@@ -35,4 +35,4 @@ const list1: FC = () => {
   );
 };
 
-export default list1;
+export default List1;
