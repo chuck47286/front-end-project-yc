@@ -26,6 +26,23 @@ const List2: FC = () => {
   // function edit(id: string) {
   //   console.log('edit ', id);
   // }
+  function deleteQuestion(id: string) {
+    setQuestionList(
+      questionList.filter((q) => {
+        if (q.id === id) return false;
+        else return true;
+      })
+    );
+  }
+
+  function publishQuestion(id: string) {
+    setQuestionList(
+      questionList.map((q) => {
+        if (q.id !== id) return q;
+        else return { ...q, isPublished: true };
+      })
+    );
+  }
 
   return (
     <>
@@ -40,6 +57,8 @@ const List2: FC = () => {
                 id={id}
                 title={title}
                 isPublished={isPublished}
+                deleteQuestion={deleteQuestion}
+                publishQuestion={publishQuestion}
               />
             );
           })}

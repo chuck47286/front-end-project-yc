@@ -5,13 +5,19 @@ type propsType = {
   id: string;
   title: string;
   isPublished: boolean;
+  deleteQuestion?: (id: string) => void;
+  publishQuestion?: (id: string) => void;
 };
 
 const QuestionCard: FC<propsType> = (props) => {
-  const { id, title, isPublished } = props;
+  const { id, title, isPublished, deleteQuestion, publishQuestion } = props;
 
-  function edit(id: string) {
-    console.log('edit ', id);
+  function publish(id: string) {
+    publishQuestion && publishQuestion(id);
+  }
+
+  function del(id: string) {
+    deleteQuestion && deleteQuestion(id);
   }
 
   return (
@@ -26,13 +32,21 @@ const QuestionCard: FC<propsType> = (props) => {
         <span>未发布</span>
       )}
       &nbsp;
-      {/* 编辑问卷 */}
+      {/* 发布问卷 */}
       <button
         onClick={() => {
-          edit(id);
+          publish(id);
         }}
       >
         编辑问卷
+      </button>
+      {/* 删除问卷 */}
+      <button
+        onClick={() => {
+          del(id);
+        }}
+      >
+        删除问卷
       </button>
     </div>
   );
