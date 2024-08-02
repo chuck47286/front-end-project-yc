@@ -9,7 +9,7 @@ const StateDemo2: FC = () => {
   // }
 
   const [person, setAge] = useState({ name: 'yucheng', age: 19 }); // 1. hooks用法
-  function changePerson() {
+  function changeAge() {
     // setAge({ ...person, age: 20 });
     setAge({
       name: 'yucheng123',
@@ -25,7 +25,7 @@ const StateDemo2: FC = () => {
         <button onClick={changeList}>add list</button> */}
         {/* js中使用JSON.stringify来解构 对象 */}
         <div>{JSON.stringify(person)}</div>
-        <button onClick={changePerson}>change person</button>
+        <button onClick={changeAge}>change person</button>
       </div>
     </>
   );
