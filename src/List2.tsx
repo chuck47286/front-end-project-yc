@@ -5,8 +5,6 @@ import { produce } from 'immer';
 
 // TS 类型
 const List2: FC = () => {
-  // const [count, setCount] = useState(0);
-
   useEffect(() => {
     console.log('组件List2 加载执行.');
     return () => {
@@ -21,6 +19,7 @@ const List2: FC = () => {
   //   };
   // }); // useEffect 副作用函数使用 无依赖项 表示在组件每次渲染都会执行（禁止）
 
+  // const [count, setCount] = useState(0);
   // useEffect(() => {
   //   console.log('依赖count变化 list2组件加载');
   //   return () => {
