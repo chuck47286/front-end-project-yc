@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 // import classNames from 'classnames';
 import './QuestionCard.css';
-// import styles from './QuestionCard.module.css';
+import styles from './QuestionCard.module.css';
 
 type propsType = {
   id: string;
@@ -31,8 +31,7 @@ const QuestionCard: FC<propsType> = (props) => {
   // });
 
   return (
-    // <div key={id} className="list-item">
-    <div key={id} className="list-item">
+    <div key={id} className={styles['list-item']}>
       <strong>{title}</strong>
       {/* 不换行空格 */}
       &nbsp;

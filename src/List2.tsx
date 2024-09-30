@@ -1,7 +1,7 @@
 import React, { FC, useState, useEffect } from 'react';
 import QuestionCard from './components/QuestionCard';
 // import './list1.css';
-import './List2.css';
+// import './List2.css';
 import { produce } from 'immer';
 
 // TS 类型
