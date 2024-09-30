@@ -9,12 +9,13 @@ import React from 'react';
 // import UseCallbackDemo from './UseCallbackDemo';
 // import useTitle from './hooks/UseTitle';
 // import useMouse from './hooks/UseMouse';
-import { useTitle } from 'ahooks';
-import { useMouse } from 'ahooks';
+// import { useTitle } from 'ahooks';
+// import { useMouse } from 'ahooks';
+import ClosureTrap from './ClosureTrap';
 
 function App() {
-  useTitle('test app 3'); // use ahooks
-  const mouse = useMouse();
+  // useTitle('test app 3'); // use ahooks
+  // const mouse = useMouse();
   // const { x, y } = useMouse();
 
   // return <>{/* <List1 /> */}</>;
@@ -28,9 +29,9 @@ function App() {
 
   return (
     <>
-      <p>
+      {/* <p>
         app page {mouse.clientX} {mouse.clientY}
-      </p>
+      </p> */}
       {/* <p>
         APP page {x} {y}
       </p> */}
@@ -39,6 +40,7 @@ function App() {
       {/* <Demo /> */}
       {/* <UseMemoDemo /> */}
       {/* <UseCallbackDemo /> */}
+      <ClosureTrap />
     </>
   );
 }
