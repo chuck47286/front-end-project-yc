@@ -1,4 +1,5 @@
 import React, { FC } from 'react';
+import classNames from 'classnames';
 import './QuestionCard.css';
 
 type propsType = {
@@ -20,8 +21,16 @@ const QuestionCard: FC<propsType> = (props) => {
     deleteQuestion && deleteQuestion(id);
   }
 
+  // let itemClassName = 'list-item';
+  // if (isPublished) itemClassName += ' published';
+  const itemClassName = classNames('list-item', { published: isPublished });
+  // const itemClassName = classNames({
+  //   'list-item': true,
+  //   published: isPublished,
+  // });
+
   return (
-    <div key={id} className="list-item">
+    <div key={id} className={itemClassName}>
       <strong>{title}</strong>
       {/* 不换行空格 */}
       &nbsp;
