@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
-// import classNames from 'classnames';
-import './QuestionCard.css';
-import styles from './QuestionCard.module.css';
+import classNames from 'classnames';
+// import './QuestionCard.css';
+import styles from './QuestionCard.module.scss';
 
 type propsType = {
   id: string;
@@ -30,14 +30,21 @@ const QuestionCard: FC<propsType> = (props) => {
   //   published: isPublished,
   // });
 
+  const listItemClass = styles['list-item'];
+  const publishedClass = styles.published;
+  const itemClassName = classNames({
+    [listItemClass]: true,
+    [publishedClass]: isPublished,
+  });
+
   return (
-    <div key={id} className={styles['list-item']}>
+    <div key={id} className={itemClassName}>
       <strong>{title}</strong>
       {/* 不换行空格 */}
       &nbsp;
       {/* 判断 */}
       {isPublished ? (
-        <span style={{ color: 'green' }}>已发布</span>
+        <span className={styles['published-span']}>已发布</span>
       ) : (
         <span>未发布</span>
       )}
